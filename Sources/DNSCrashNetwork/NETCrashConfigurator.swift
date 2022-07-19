@@ -17,8 +17,8 @@ open class NETCrashConfigurator: NETBlankConfigurator {
     public required init() { super.init() }
 
     // MARK: - Worker Logic (Public) -
-    override open func defaultHeaders() -> HTTPHeaders {
-        throw DNSError.Analytics
+    override open func restHeaders() throws -> HTTPHeaders {
+        throw DNSError.NetworkConfigurator
             .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
     }
 }
