@@ -15,9 +15,30 @@ import Foundation
 open class NETCrashConfig: NETBlankConfig {
     public required init() { super.init() }
 
-    // MARK: - Worker Logic (Public) -
+    // MARK: - Network Config Logic (Public) -
+    override open func urlComponents() -> NETPTCLConfigResURLComponents {
+        let error = DNSError.NetworkBase
+            .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
+    }
+    override open func urlComponents(for code: String) -> NETPTCLConfigResURLComponents {
+        let error = DNSError.NetworkBase
+            .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
+    }
+    override open func urlComponents(set components: URLComponents, for code: String) -> NETPTCLConfigResVoid {
+        let error = DNSError.NetworkBase
+            .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
+    }
     override open func restHeaders() -> NETPTCLConfigResHeaders {
-        return .failure(DNSError.NetConfig
-            .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)")))
+        let error = DNSError.NetworkBase
+            .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
+    }
+    override open func restHeaders(for code: String) -> NETPTCLConfigResHeaders {
+        let error = DNSError.NetworkBase
+            .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
     }
 }
