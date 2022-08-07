@@ -19,26 +19,37 @@ open class NETCrashConfig: NETBlankConfig {
     override open func urlComponents() -> NETPTCLConfigResURLComponents {
         let error = DNSError.NetworkBase
             .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
-        return .failure(error)
+        fatalError(error.errorString)
     }
     override open func urlComponents(for code: String) -> NETPTCLConfigResURLComponents {
         let error = DNSError.NetworkBase
             .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
-        return .failure(error)
+        fatalError(error.errorString)
     }
     override open func urlComponents(set components: URLComponents, for code: String) -> NETPTCLConfigResVoid {
         let error = DNSError.NetworkBase
             .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
-        return .failure(error)
+        fatalError(error.errorString)
     }
     override open func restHeaders() -> NETPTCLConfigResHeaders {
         let error = DNSError.NetworkBase
             .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
-        return .failure(error)
+        fatalError(error.errorString)
     }
     override open func restHeaders(for code: String) -> NETPTCLConfigResHeaders {
         let error = DNSError.NetworkBase
             .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
-        return .failure(error)
+        fatalError(error.errorString)
+    }
+    override open func urlRequest(using url: URL) -> NETPTCLConfigResURLRequest {
+        let error = DNSError.NetworkBase
+            .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
+        fatalError(error.errorString)
+    }
+    override open func urlRequest(for code: String,
+                                  using url: URL) -> NETPTCLConfigResURLRequest {
+        let error = DNSError.NetworkBase
+            .notImplemented(DNSCodeLocation.crashNetwork(self, "\(#file),\(#line),\(#function)"))
+        fatalError(error.errorString)
     }
 }
