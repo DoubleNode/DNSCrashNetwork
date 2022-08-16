@@ -24,12 +24,12 @@ open class NETCrashRouter: NETBlankRouter {
 
     // MARK: - Network Router Logic (Public) -
     override open func urlRequest(using url: URL) -> NETPTCLRouterResURLRequest {
-        let error = DNSError.NetworkBase.notImplemented(DNSCodeLocation.crashNetwork(self))
+        let error = DNSError.NetworkBase.notImplemented(.crashNetwork(self))
         fatalError(error.errorString)
     }
     override open func urlRequest(for code: String,
                                   using url: URL) -> NETPTCLRouterResURLRequest {
-        let error = DNSError.NetworkBase.notImplemented(DNSCodeLocation.crashNetwork(self))
+        let error = DNSError.NetworkBase.notImplemented(.crashNetwork(self))
         fatalError(error.errorString)
     }
 }
