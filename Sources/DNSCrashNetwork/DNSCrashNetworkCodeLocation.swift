@@ -12,6 +12,6 @@ import DNSProtocols
 public extension DNSCodeLocation {
     typealias crashNetwork = DNSCrashNetworkCodeLocation
 }
-open class DNSCrashNetworkCodeLocation: DNSCodeLocation {
+open class DNSCrashNetworkCodeLocation: DNSCodeLocation, @unchecked Sendable {
     override open class var domainPreface: String { "com.doublenode.crashNetwork." }
 }

@@ -12,24 +12,24 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class NETCrashRouter: NETBlankRouter {
+open class NETCrashRouter: NETBlankRouter, @unchecked Sendable {
     public required init() {
         super.init()
         self.configure()
     }
-    public required init(with netConfig: NETPTCLConfig) {
+    public required init(with netConfig: any NETPTCLConfig) {
         super.init()
         self.configure()
     }
 
     // MARK: - Network Router Logic (Public) -
     override open func urlRequest(using url: URL) -> NETPTCLRouterResURLRequest {
-        let error = DNSError.NetworkBase.notImplemented(transactionId: "", .crashNetwork(self))
+        let error = DNSError.NetworkBase.notImplemented(transactionId: "", DNSCrashNetworkCodeLocation(self))
         fatalError(error.errorString)
     }
     override open func urlRequest(for code: String,
                                   using url: URL) -> NETPTCLRouterResURLRequest {
-        let error = DNSError.NetworkBase.notImplemented(transactionId: "", .crashNetwork(self))
+        let error = DNSError.NetworkBase.notImplemented(transactionId: "", DNSCrashNetworkCodeLocation(self))
         fatalError(error.errorString)
     }
 }

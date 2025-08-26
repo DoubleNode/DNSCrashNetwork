@@ -42,14 +42,28 @@ let package = Package(
             name: "DNSCrashNetwork",
             dependencies: ["Alamofire", "DNSBlankNetwork", "DNSCore", "DNSDataObjects", "DNSError", "DNSProtocols"],
             swiftSettings: [
-                // Swift 6 language features - no need to enable upcoming features
+                .enableUpcomingFeature("BareSlashRegexLiterals"),
+                .enableUpcomingFeature("ConciseMagicFile"),
+                .enableUpcomingFeature("ForwardTrailingClosures"),
+                .enableUpcomingFeature("ImportObjcForwardDeclarations"),
+                .enableUpcomingFeature("DisableOutwardActorInference"),
+                .enableUpcomingFeature("ExistentialAny"),
+                .enableUpcomingFeature("StrictConcurrency"),
+                .enableUpcomingFeature("GlobalConcurrency")
             ]
         ),
         .testTarget(
             name: "DNSCrashNetworkTests",
             dependencies: ["DNSCrashNetwork"],
             swiftSettings: [
-                // Swift 6 language features - no need to enable upcoming features
+                .enableUpcomingFeature("BareSlashRegexLiterals"),
+                .enableUpcomingFeature("ConciseMagicFile"),
+                .enableUpcomingFeature("ForwardTrailingClosures"),
+                .enableUpcomingFeature("ImportObjcForwardDeclarations"),
+                .enableUpcomingFeature("DisableOutwardActorInference"),
+                .enableUpcomingFeature("ExistentialAny"),
+                .enableUpcomingFeature("StrictConcurrency"),
+                .enableUpcomingFeature("GlobalConcurrency")
             ]
         ),
     ],
